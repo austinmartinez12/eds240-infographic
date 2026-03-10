@@ -1,0 +1,84 @@
+---
+title: "Class presentation"
+subtitle: "Assigned Wed 01/28/2026 | Due Wed 02/04/2026"
+format: html
+author: "Austin Martinez"
+date: 02/04/2026
+---
+
+```{r}
+# Load in libraries
+library(here)
+library(tidyverse)
+library(ggplot2)
+```
+
+```{r}
+# Read in Data
+lake_data <- read_csv(here("data/EPA_EMAP_CHEM.csv"))
+```
+
+```{r}
+# Find the highest K value for each lake
+grouped <- lake_data |>
+  group_by(LAKENAME) |>
+  summarize(mean_NO3 = mean(NO3))
+```
+
+
+```{r}
+grouped$mean_NO3 <- grouped$mean_NO3 * 0.062
+```
+
+```{r fig.height = 7, fig.width=15}
+# Plot the number of counties rated 'Relatively High' in each state with a line graph
+
+skull_url <- here::here("images/skull.png")
+
+grouped |>
+  arrange(desc(mean_NO3)) |>
+  slice_head(n = 6) |>
+  mutate(skull_img = skull_url) |>
+  ggplot(aes(x = reorder(LAKENAME, mean_NO3),
+             y = mean_NO3)) +
+  geom_linerange(aes(ymin = 0, ymax = mean_NO3), color = "dodgerblue", size = 2) +
+  geom_image(aes(image = skull_img), size = 0.09) +
+  geom_text(aes(label = signif(mean_NO3, 3), hjust = -0.8)) + 
+  geom_hline(aes(yintercept = 10, linetype = "EPA Standard (10 mg/L)"), color = "black", size = 1) +
+  scale_linetype_manual(values = c("EPA Standard (10 mg/L)" = "dashed")) +
+  labs(x = "Lakes",
+       y = "Mean NO3 concentration",
+       title = "Lakes with mean NO3 concentations exceeding the EPA Water Quality Standards (WQS)",
+       linetype = "Dashed line") +
+  coord_flip() +
+  theme_minimal() +
+  theme(axis.title.y = element_blank())
+```
+
+
+```{r fig.height = 6, fig.width=13.5}
+library(ggimage)
+
+skull_url <- "https://th.bing.com/th/id/OIP.XKyLMmCnga2eaCaOUPd6tQHaHa?w=183&h=183&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3"
+
+grouped |>
+  arrange(desc(mean_NO3)) |>
+  slice_head(n = 6) |>
+  mutate(skull_img = skull_url) |>
+  ggplot(aes(x = reorder(LAKENAME, mean_NO3),
+             y = mean_NO3)) +
+  geom_linerange(aes(ymin = 0, ymax = mean_NO3), color = "dodgerblue", size = 2) +
+  geom_image(aes(image = skull_img), size = 0.09) +
+  geom_text(aes(label = signif(mean_NO3, 3), hjust = -0.8)) + 
+  geom_hline(aes(yintercept = 10, linetype = "EPA WQS (10 mg/L)"), color = "black", size = 1) +
+  scale_linetype_manual(values = c("EPA WQS (10 mg/L)" = "dashed")) +
+  labs(x = "Lakes",
+       y = "Mean NO3 concentration",
+       title = "Lakes with mean NO3 concentations exeding the EPA Water Quality Standards (WQS)",
+       linetype = "Standard") +
+  coord_flip() +
+  theme_minimal() +
+  theme(axis.title.y = element_blank())
+```
+
+

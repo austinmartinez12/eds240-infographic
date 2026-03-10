@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Austin Martinez">
+<meta name="dcterms.date" content="2026-02-22">
+
+<title>FPM #3: Drafting Visualizations</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="drafting-viz_files/libs/clipboard/clipboard.min.js"></script>
+<script src="drafting-viz_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="drafting-viz_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="drafting-viz_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="drafting-viz_files/libs/quarto-html/popper.min.js"></script>
+<script src="drafting-viz_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="drafting-viz_files/libs/quarto-html/anchor.min.js"></script>
+<link href="drafting-viz_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="drafting-viz_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="drafting-viz_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="drafting-viz_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="drafting-viz_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">FPM #3: Drafting Visualizations</h1>
+<p class="subtitle lead">Assigned Wed 02/11/2026 | Due Sun 02/22/2026</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Austin Martinez </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 22, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="iii.-some-pre-planning" class="level2">
+<h2 class="anchored" data-anchor-id="iii.-some-pre-planning">III. Some pre-planning</h2>
+<section id="before-you-start-drafing-your-viz-answer-the-following-questions" class="level3">
+<h3 class="anchored" data-anchor-id="before-you-start-drafing-your-viz-answer-the-following-questions">Before you start drafing your viz, answer the following questions:</h3>
+<ol type="1">
+<li>Restate the questions you hope to answer with your inforgraphic. This should include one overarching question (think of this as driving the overall theme of your infographic) and at least three subquestions (each of which will be addressed by your infographic’s component visualizations). Have these questions changed at all since FPM #1? If yes, how so?</li>
+</ol>
+<ul>
+<li>Which lakes in the northeast United states have contaminant concentrations above the EPA Water Quality Standards?
+<ul>
+<li>What lakes in the Northeast United States have a mean nitrate (NO3) concentration exceeding the EPA water quality standard of 10 mg/L?</li>
+<li>Which lakes have the greatest number of contaminants exceeding EPA Water Quality Standards?</li>
+<li>Where are the lakes that have contaminant concentrations above the EPA Water Quality Standards located? Are they close together and possibly being contaminated by the same source?</li>
+</ul></li>
+<li>Yes, these questions have changed. I originally wanted to look at NH3, but my data set only has NH4, so I switched to NO3. Also, on my FPM #1 I only listed 2 subquestions, so I added : Where are the lakes that have contaminant concentrations above the EPA Water Quality Standards located? Are they close together and possibly being contaminated by the same source?</li>
+</ul>
+<ol start="2" type="1">
+<li>Explain which variables from your data set(s) you will use to answer the above questions, and how.</li>
+</ol>
+<ul>
+<li><p>sub question 1: <code>NO3</code> and <code>LAKENAME</code> will be used to answer this question. I will group by <code>LAKENAME</code> and calculate the mean <code>NO3</code> concentration for each lake.</p></li>
+<li><p>sub question 2: <code>NH4, NO3, NTL, PTL, CHLA, CL, PHEQ, TURB</code> and <code>LAKENAME</code> will be used to answer this question. I will group by <code>LAKENAME</code> and calculate the mean <code>NH4, NO3, NTL, PTL, CHLA, CL, PHEQ, TURB</code> concentrations for each lake. I will then add columns that will have the EPA water quality standard for each contaminate. I will then use a for loop to see which contaminate surpasses the quality standard and will count the amount of contaminates suprass the quality standard.</p></li>
+<li><p>sub question 3: <code>LAT_DD, LON_DD</code> and <code>LAKENAME</code> will be used to answer this question. I will plot all the lakes and color the lakes that have ontaminant concentrations above the EPA Water Quality Standards red and leave the safe lakes blue.</p></li>
+</ul>
+<ol start="3" type="1">
+<li>In FPM #2, you created some exploratory data viz to better understand your data. You may already have some ideas of how you plan to formally visualize your data, but it’s incredibly helpful to look at visualizations by other creators for inspiration. Find at least two data visualizations that you could (potentially) borrow / adapt pieces from. Download and embed them into your drafting-viz.qmd file, and explain which elements you might borrow (e.g.&nbsp;the graphic form, legend design, layout, etc.).</li>
+</ol>
+<ul>
+<li></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lolipop.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="This is an example lollipop graph that I would like to use in my inforgraphic"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>the graphic form, legend design, layout, etc.</p>
+<p>I will be using the lollipop graph for my first 2 sub-questions. It is a great and clean way to show multiple lakes contaminate concentrations. I will be changing the dots to make them another icon to make it more poweful of a message. I will not be using a legend in this plot.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/map.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="This is a map that I would like to use in my inforgraphic"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>I will be using a map like this for sub-question 3. I will implement a different type of basemap that has borders and shows state lines. I will definitely be using a basemap that has a plain layout. I will be keeping the coloring of sites also. I will be adding a legend that tells you which colors correspond to what.</p>
+</section>
+</section>
+<section id="iv.-hand-draw-your-anticipated-visualizations" class="level2">
+<h2 class="anchored" data-anchor-id="iv.-hand-draw-your-anticipated-visualizations">IV. Hand-draw your anticipated visualizations</h2>
+<section id="before-you-begin-coding-its-a-super-useful-practice-to-sketch-out-your-anticipated-visualizations-by-hand.-this-medium-article-does-a-great-job-summarizing-why-this-step-matters." class="level3">
+<h3 class="anchored" data-anchor-id="before-you-begin-coding-its-a-super-useful-practice-to-sketch-out-your-anticipated-visualizations-by-hand.-this-medium-article-does-a-great-job-summarizing-why-this-step-matters.">Before you begin coding, it’s a super useful practice to sketch out your anticipated visualizations by hand. This Medium article does a great job summarizing why this step matters.</h3>
+<ol type="1">
+<li>Hand-draw your anticipated visualizations, then take a photo of your drawing(s) and embed it in your rendered drafting-viz.qmd file – note that these are not exploratory visualizations, but rather your plan for your final visualizations that you will eventually polish and include in your infographic.</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/hand_drawn.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Alt text here"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="v.-recreate-your-hand-drawn-visualizations-using-code" class="level2">
+<h2 class="anchored" data-anchor-id="v.-recreate-your-hand-drawn-visualizations-using-code">V. Recreate your hand-drawn visualizations using code</h2>
+<section id="mock-up-all-of-your-hand-drawn-visualizations-using-code.-we-understand-that-you-will-continue-to-iterate-on-these-into-fpm-4-particularly-after-receiving-feedback-but-by-the-end-of-fpm-3-you-should" class="level3">
+<h3 class="anchored" data-anchor-id="mock-up-all-of-your-hand-drawn-visualizations-using-code.-we-understand-that-you-will-continue-to-iterate-on-these-into-fpm-4-particularly-after-receiving-feedback-but-by-the-end-of-fpm-3-you-should">Mock up all of your hand drawn visualizations using code. We understand that you will continue to iterate on these into FPM #4 (particularly after receiving feedback), but by the end of FPM #3, you should:</h3>
+<p>have your data plotted (if you’re experimenting with a graphic form(s) that was not explicitly covered in class, we understand that this may take some more time to build; you should have as much put together as possible) use appropriate strategies to highlight / focus attention on a clear message include appropriate text such as titles, captions, axis labels (note: you may eventually convert some text, such as titles and captions, into annotations or text elements on your infographic; it’s still helpful to include titles, etc. on these stand-alone visualizations now, to provide your peer reviewers and instructional team with necessary context) experiment with colors and typefaces / fonts create a presentable / aesthetically-pleasing theme (e.g.&nbsp;(re)move gridlines / legends as appropriate, adjust font sizes, etc.)</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load in libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>here() starts at /Users/austinmartinez/Documents/MEDS/EDS-240/eds240-infographic</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.5.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tibble' was built under R version 4.5.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tidyr' was built under R version 4.5.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'readr' was built under R version 4.5.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'purrr' was built under R version 4.5.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.6
+✔ forcats   1.0.0     ✔ stringr   1.6.0
+✔ ggplot2   4.0.1     ✔ tibble    3.3.1
+✔ lubridate 1.9.4     ✔ tidyr     1.3.2
+✔ purrr     1.2.1     </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggimage)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggimage' was built under R version 4.5.2</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'sf' was built under R version 4.5.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Linking to GEOS 3.13.0, GDAL 3.8.5, PROJ 9.5.1; sf_use_s2() is TRUE</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in Data</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>lake_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data/EPA_EMAP_CHEM.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 500 Columns: 50
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (25): LAKENAME, LAKE_ID, ANCF, CAF, CLF, COLORF, COM_FLD, COM_LAB, CONDF...
+dbl (25): PHEQ, DOC, CA, CL, ANC, CHLA, COLOR, COND, DEP_SAMP, DIC, K, LAT_D...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<pre><code>-   What lakes in the Northeast United States have a mean nitrate (NO3) concentration exceeding the EPA water quality standard of 10 mg/L?</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the mean NO3 value for each lake</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>grouped <span class="ot">&lt;-</span> lake_data <span class="sc">|&gt;</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(LAKENAME) <span class="sc">|&gt;</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_NO3 =</span> <span class="fu">mean</span>(NO3))</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert units to mg/L</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>grouped<span class="sc">$</span>mean_NO3 <span class="ot">&lt;-</span> grouped<span class="sc">$</span>mean_NO3 <span class="sc">*</span> <span class="fl">0.062</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in skull image</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>skull_url <span class="ot">&lt;-</span> <span class="st">"https://th.bing.com/th/id/OIP.5nP8u8TbELdXKSszVmjoVQHaHa?w=183&amp;h=183&amp;c=7&amp;r=0&amp;o=7&amp;dpr=2&amp;pid=1.7&amp;rm=3"</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>grouped <span class="sc">|&gt;</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_NO3)) <span class="sc">|&gt;</span></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">6</span>) <span class="sc">|&gt;</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">skull_img =</span> skull_url) <span class="sc">|&gt;</span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(LAKENAME, mean_NO3),</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> mean_NO3)) <span class="sc">+</span></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_linerange</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> <span class="dv">0</span>, <span class="at">ymax =</span> mean_NO3), <span class="at">color =</span> <span class="st">"dodgerblue"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_image</span>(<span class="fu">aes</span>(<span class="at">image =</span> skull_img), <span class="at">size =</span> <span class="fl">0.09</span>) <span class="sc">+</span></span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">signif</span>(mean_NO3, <span class="dv">3</span>), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.8</span>)) <span class="sc">+</span> </span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept =</span> <span class="dv">10</span>, <span class="at">linetype =</span> <span class="st">"EPA Standard (10 mg/L)"</span>), <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"EPA Standard (10 mg/L)"</span> <span class="ot">=</span> <span class="st">"dashed"</span>)) <span class="sc">+</span></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Lakes"</span>,</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Mean NO3 concentration"</span>,</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Lakes with mean NO3 concentations exceeding the EPA Water Quality Standards (WQS)"</span>,</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">linetype =</span> <span class="st">"Dashed line"</span>,</span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Data: USEPA EMAP Surface Waters Lake Database – Northeast Lake Water Chemistry (1991–1994)"</span>) <span class="sc">+</span></span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.y =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">22</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb20-39"><a href="#cb20-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>)</span>
+<span id="cb20-40"><a href="#cb20-40" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="drafting-viz_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" alt="Lollipop plot of the lakes supassing the EPA Water Quality Standards in mean NO3 in the Northeast US, Waterloo Lakes has the highest" width="1440"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Which lakes have the greatest number of contaminants exceeding EPA Water Quality Standards?</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the mean NH4, NO3, NTL, PTL, CHLA, CL, PHEQ, TURB value for each lake</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>grouped_2 <span class="ot">&lt;-</span> lake_data <span class="sc">|&gt;</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(LAKENAME) <span class="sc">|&gt;</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_NH4  =</span> <span class="fu">mean</span>(NH4,  <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_NO3  =</span> <span class="fu">mean</span>(NO3,  <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_NTL  =</span> <span class="fu">mean</span>(NTL,  <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_PTL  =</span> <span class="fu">mean</span>(PTL,  <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_CHLA =</span> <span class="fu">mean</span>(CHLA, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_CL   =</span> <span class="fu">mean</span>(CL,   <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_PHEQ =</span> <span class="fu">mean</span>(PHEQ, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_TURB =</span> <span class="fu">mean</span>(TURB, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">LAT_DD =</span> <span class="fu">mean</span>(LAT_DD, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">LON_DD =</span> <span class="fu">mean</span>(LON_DD, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert units to match EPA WQS</span></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="co"># NH4: microequivalentsPerLiter to mg/L</span></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>grouped_2<span class="sc">$</span>mean_NH4 <span class="ot">&lt;-</span> grouped_2<span class="sc">$</span>mean_NH4 <span class="sc">*</span> <span class="fl">0.01804</span></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a><span class="co"># NO3: microequivalentsPerLiter to mg/L</span></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>grouped_2<span class="sc">$</span>mean_NO3 <span class="ot">&lt;-</span> grouped_2<span class="sc">$</span>mean_NO3 <span class="sc">*</span> <span class="fl">0.062</span></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a><span class="co"># NTL: microgramsPerLiter to mg/L</span></span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>grouped_2<span class="sc">$</span>mean_NTL <span class="ot">&lt;-</span> grouped_2<span class="sc">$</span>mean_NTL <span class="sc">/</span> <span class="dv">1000</span></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a><span class="co"># PTL: microgramsPerLiter to mg/L</span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>grouped_2<span class="sc">$</span>mean_PTL <span class="ot">&lt;-</span> grouped_2<span class="sc">$</span>mean_PTL <span class="sc">/</span> <span class="dv">1000</span></span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a><span class="co"># CL: microequivalentsPerLiter to mg/L</span></span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>grouped_2<span class="sc">$</span>mean_CL <span class="ot">&lt;-</span> grouped_2<span class="sc">$</span>mean_CL <span class="sc">*</span> <span class="fl">0.03545</span></span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Add EPA WQS threshold columns</span></span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>grouped_2<span class="sc">$</span>wqs_NH4   <span class="ot">&lt;-</span> <span class="fl">0.1</span>      <span class="co"># mg/L (lower protective limit)</span></span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a>grouped_2<span class="sc">$</span>wqs_NO3   <span class="ot">&lt;-</span> <span class="dv">10</span>       <span class="co"># mg/L</span></span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a>grouped_2<span class="sc">$</span>wqs_NTL   <span class="ot">&lt;-</span> <span class="dv">1</span>        <span class="co"># mg/L (natural level)</span></span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a>grouped_2<span class="sc">$</span>wqs_PTL   <span class="ot">&lt;-</span> <span class="fl">0.10</span>     <span class="co"># mg/L</span></span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>grouped_2<span class="sc">$</span>wqs_CHLA  <span class="ot">&lt;-</span> <span class="dv">5</span>        <span class="co"># μg/L (good water quality threshold)</span></span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a>grouped_2<span class="sc">$</span>wqs_CL    <span class="ot">&lt;-</span> <span class="dv">230</span>      <span class="co"># mg/L</span></span>
+<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a>grouped_2<span class="sc">$</span>wqs_PHEQ  <span class="ot">&lt;-</span> <span class="fl">7.0</span>      <span class="co"># pH (neutral midpoint; range is 6.5-8.5)</span></span>
+<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a>grouped_2<span class="sc">$</span>wqs_TURB  <span class="ot">&lt;-</span> <span class="dv">5</span>        <span class="co"># NTU (aquatic standard)</span></span>
+<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Count violations for each lake</span></span>
+<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a>grouped_2<span class="sc">$</span>violations <span class="ot">&lt;-</span> </span>
+<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a>  (grouped_2<span class="sc">$</span>mean_NH4 <span class="sc">&gt;=</span> grouped_2<span class="sc">$</span>wqs_NH4) <span class="sc">+</span></span>
+<span id="cb22-44"><a href="#cb22-44" aria-hidden="true" tabindex="-1"></a>  (grouped_2<span class="sc">$</span>mean_NO3 <span class="sc">&gt;=</span> grouped_2<span class="sc">$</span>wqs_NO3) <span class="sc">+</span></span>
+<span id="cb22-45"><a href="#cb22-45" aria-hidden="true" tabindex="-1"></a>  (grouped_2<span class="sc">$</span>mean_NTL <span class="sc">&gt;=</span> grouped_2<span class="sc">$</span>wqs_NTL) <span class="sc">+</span></span>
+<span id="cb22-46"><a href="#cb22-46" aria-hidden="true" tabindex="-1"></a>  (grouped_2<span class="sc">$</span>mean_PTL <span class="sc">&gt;=</span> grouped_2<span class="sc">$</span>wqs_PTL) <span class="sc">+</span></span>
+<span id="cb22-47"><a href="#cb22-47" aria-hidden="true" tabindex="-1"></a>  (grouped_2<span class="sc">$</span>mean_CHLA <span class="sc">&gt;=</span> grouped_2<span class="sc">$</span>wqs_CHLA) <span class="sc">+</span></span>
+<span id="cb22-48"><a href="#cb22-48" aria-hidden="true" tabindex="-1"></a>  (grouped_2<span class="sc">$</span>mean_CL <span class="sc">&gt;=</span> grouped_2<span class="sc">$</span>wqs_CL) <span class="sc">+</span></span>
+<span id="cb22-49"><a href="#cb22-49" aria-hidden="true" tabindex="-1"></a>  ((grouped_2<span class="sc">$</span>mean_PHEQ <span class="sc">&lt;</span> <span class="fl">6.5</span>) <span class="sc">|</span> (grouped_2<span class="sc">$</span>mean_PHEQ <span class="sc">&gt;</span> <span class="fl">8.5</span>)) <span class="sc">+</span></span>
+<span id="cb22-50"><a href="#cb22-50" aria-hidden="true" tabindex="-1"></a>  (grouped_2<span class="sc">$</span>mean_TURB <span class="sc">&gt;=</span> grouped_2<span class="sc">$</span>wqs_TURB)</span>
+<span id="cb22-51"><a href="#cb22-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-52"><a href="#cb22-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-53"><a href="#cb22-53" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in skull image</span></span>
+<span id="cb22-54"><a href="#cb22-54" aria-hidden="true" tabindex="-1"></a>skull_url <span class="ot">&lt;-</span> <span class="st">"https://th.bing.com/th/id/OIP.5nP8u8TbELdXKSszVmjoVQHaHa?w=183&amp;h=183&amp;c=7&amp;r=0&amp;o=7&amp;dpr=2&amp;pid=1.7&amp;rm=3"</span></span>
+<span id="cb22-55"><a href="#cb22-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-56"><a href="#cb22-56" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure</span></span>
+<span id="cb22-57"><a href="#cb22-57" aria-hidden="true" tabindex="-1"></a>grouped_2 <span class="sc">|&gt;</span></span>
+<span id="cb22-58"><a href="#cb22-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(violations)) <span class="sc">|&gt;</span></span>
+<span id="cb22-59"><a href="#cb22-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">50</span>) <span class="sc">|&gt;</span></span>
+<span id="cb22-60"><a href="#cb22-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">skull_img =</span> skull_url) <span class="sc">|&gt;</span></span>
+<span id="cb22-61"><a href="#cb22-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(LAKENAME, violations),</span>
+<span id="cb22-62"><a href="#cb22-62" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> violations)) <span class="sc">+</span></span>
+<span id="cb22-63"><a href="#cb22-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_linerange</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> <span class="dv">0</span>, <span class="at">ymax =</span> violations), <span class="at">color =</span> <span class="st">"dodgerblue"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb22-64"><a href="#cb22-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_image</span>(<span class="fu">aes</span>(<span class="at">image =</span> skull_img), <span class="at">size =</span> <span class="fl">0.018</span>) <span class="sc">+</span></span>
+<span id="cb22-65"><a href="#cb22-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> violations, <span class="at">hjust =</span> <span class="sc">-</span><span class="dv">2</span>)) <span class="sc">+</span> </span>
+<span id="cb22-66"><a href="#cb22-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Lakes"</span>,</span>
+<span id="cb22-67"><a href="#cb22-67" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Number of EPA WQS Violations"</span>,</span>
+<span id="cb22-68"><a href="#cb22-68" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Lakes with Most EPA Water Quality Standards (WQS) Violations"</span>,</span>
+<span id="cb22-69"><a href="#cb22-69" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Data: USEPA EMAP Surface Waters Lake Database – Northeast Lake Water Chemistry (1991–1994)"</span>) <span class="sc">+</span></span>
+<span id="cb22-70"><a href="#cb22-70" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb22-71"><a href="#cb22-71" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb22-72"><a href="#cb22-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.y =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb22-73"><a href="#cb22-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb22-74"><a href="#cb22-74" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb22-75"><a href="#cb22-75" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb22-76"><a href="#cb22-76" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb22-77"><a href="#cb22-77" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">22</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb22-78"><a href="#cb22-78" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb22-79"><a href="#cb22-79" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb22-80"><a href="#cb22-80" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>)</span>
+<span id="cb22-81"><a href="#cb22-81" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="drafting-viz_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" alt="Lollipop plot of the total amount of EPA Water Quality Standards the top 50 lakes in the Northeast US surpass, Waterloo Lakes has the highest amount" width="1440"></p>
+</figure>
+</div>
+</div>
+</div>
+<pre><code>-   Where are the lakes that have contaminant concentrations above the EPA Water Quality Standards located? Are they close together and possibly being contaminated by the same source?</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert grouped_2 to spatial object</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>grouped_2_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(grouped_2, </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"LON_DD"</span>, <span class="st">"LAT_DD"</span>), </span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create tmap</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(grouped_2_sf) <span class="sc">+</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_dots</span>(<span class="at">col =</span> <span class="st">"violations"</span>, </span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="fl">0.8</span>,</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">palette =</span> <span class="fu">c</span>(<span class="st">"green"</span>, <span class="st">"lightgreen"</span>, <span class="st">"yellowgreen"</span>, <span class="st">"yellow"</span>, <span class="st">"orange"</span>, <span class="st">"orangered"</span>, <span class="st">"red"</span>),</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">"Number of WQS Violations"</span>) <span class="sc">+</span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_basemap</span>(<span class="st">"CartoDB.Positron"</span>) <span class="sc">+</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">title =</span> <span class="st">"Lakes with EPA Water Quality Standards Violations"</span>,</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">title.size =</span> <span class="dv">3</span>,</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">legend.title.size =</span> <span class="dv">2</span>,</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">legend.text.size =</span> <span class="fl">1.5</span>,</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">legend.outside =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="st">"left"</span>, <span class="st">"bottom"</span>)) <span class="sc">+</span></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_credits</span>(<span class="st">"Data: USEPA EMAP Surface Waters Lake Database – Northeast Lake Water Chemistry (1991–1994)"</span>,</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">c</span>(<span class="st">"center"</span>, <span class="st">"bottom"</span>),</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_compass</span>(<span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_scale_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code></code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── tmap v3 code detected ───────────────────────────────────────────────────────</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>[v3-&gt;v4] `tm_tm_dots()`: migrate the argument(s) related to the scale of the
+visual variable `fill` namely 'palette' (rename to 'values') to fill.scale =
+tm_scale(&lt;HERE&gt;).
+[v3-&gt;v4] `tm_dots()`: use 'fill' for the fill color of polygons/symbols
+(instead of 'col'), and 'col' for the outlines (instead of 'border.col').
+[tm_dots()] Argument `title` unknown.
+[v3-&gt;v4] `tm_layout()`: use `tm_title()` instead of `tm_layout(title = )`
+! `tm_scale_bar()` is deprecated. Please use `tm_scalebar()` instead.
+Multiple palettes called "green" found: "kovesi.green", "tableau.green". The first one, "kovesi.green", is returned.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="drafting-viz_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" alt="Map of shwoing where lakes that have contaminant concentrations above the EPA Water Quality Standards are located in the Northeast U.S., where most are located in the south" width="1440"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="vi.-answer-a-few-last-questions-about-your-work-and-progress" class="level2">
+<h2 class="anchored" data-anchor-id="vi.-answer-a-few-last-questions-about-your-work-and-progress">VI. Answer a few last questions about your work and progress</h2>
+<ol type="1">
+<li>What are the key insights you want your infographic to communicate, and how will your design choices help highlight and support those messages?</li>
+</ol>
+<ul>
+<li>I want to communicate that these contaminants could be very harmful and which lakes people should be weary about. My infographic will show which lakes to avoid and just how many contaminates each lake has.</li>
+</ul>
+<ol start="2" type="1">
+<li>What challenges did you encounter or anticipate encountering as you continue to build / iterate on your visualizations in R? If you struggled with mocking up any of your three visualizations, describe those challenges here.</li>
+</ol>
+<ul>
+<li>My biggest challenge was with subquestion 2. Only because the amount of work that went into it i had to do so many steps and correctly standardize units. The visualization its self wasn’t difficult to make, but the prep took a lot of time.</li>
+</ul>
+<ol start="3" type="1">
+<li>What ggplot extension tools / packages do you need to use to build your visualizations? Are there any that we haven’t covered in class that you’ll be learning how to use for your visualizations?</li>
+</ol>
+<ul>
+<li>I had to use theme() and <code>ggimage</code>. <code>ggimage</code> was not taught in class. I also had to use tmap to make my map. This wasn’t taught in data viz, but I learned it from Annie in Geospatial.</li>
+</ul>
+<ol start="4" type="1">
+<li>What feedback do you need from the instructional team and / or your peers to ensure that your intended message and key insights are clear?</li>
+</ol>
+<ul>
+<li>I need help on my map mainly how to make it aesthetically pleasing. This map is ugly I want a cleaner gray background to make points stand out. I also want my points to be different colors</li>
+</ul>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

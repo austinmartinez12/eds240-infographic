@@ -1,0 +1,98 @@
+---
+title: "FPM #2: Exploratory Data Visualization"
+subtitle: "Assigned Wed 01/28/2026 | Due Wed 02/04/2026"
+format: html
+author: "Austin Martinez"
+date: 02/04/2026
+---
+
+What water bodies in the northeast have I will instead be looking into Nitrate.
+
+```{r}
+# Load in libraries
+library(here)
+library(tidyverse)
+library(ggplot2)
+```
+
+```{r}
+# Read in Data
+lake_data <- read_csv(here("data/EPA_EMAP_CHEM.csv"))
+```
+
+```{r}
+# Find the highest K value for each lake
+lake_data |>
+  group_by(LAKENAME) |>
+  summarize(max_K = max(K))
+```
+
+```{r fig.width=10}
+# Plot the number of counties rated 'Relatively High' in each state with a line graph
+lake_data |>
+  arrange(desc(K)) |>
+  slice_head(n = 10) |>
+  ggplot(aes(x = reorder(LAKENAME, K),
+             y = K)) +
+  geom_linerange(aes(ymin = 0, ymax = K)) +
+  geom_point(color = "red") +
+  geom_text(aes(label = K, hjust = -0.8)) + 
+  labs(x = "Lakes",
+       y = "K concentration",
+       title = "Lakes with the highest K concentations") +
+  coord_flip() +
+  theme_minimal() +
+  theme(axis.title.y = element_blank())
+```
+
+
+
+```{r}
+# Plot the relaionship between turbitity and NH4
+ggplot(lake_data, aes(x =  TURB, y = NH4)) +
+  geom_point(color = "blue", alpha = 0.6, size = 2) +
+  geom_smooth(method = "lm", color = "red") +
+  labs(
+    title = "Relationship between turbitity and NH4",
+    x = " Turbidity",
+    y = " NH4"
+  ) +
+  theme_minimal()
+```
+
+
+```{r fig.width=12}
+# Top 10 lakes by NO3 concentration as a bar chart
+lake_data |>
+  arrange(desc(NO3)) |>
+  slice_head(n = 10) |>
+  ggplot(aes(x = reorder(LAKENAME, NO3), y = NO3)) +
+  geom_col(fill = "blue") +  # bar chart
+  geom_text(aes(label = NO3), hjust = -0.1) +
+  labs(
+    x = "Lakes",
+    y = "NO3 Concentration [mg/L]",
+    title = "Top 10 Lakes by Nitrate (NO3) Concentration"
+  ) +
+  coord_flip() + 
+  theme_minimal() +
+  theme(axis.title.y = element_blank(),
+        plot.title = element_text(hjust = 0.5, face = "bold"))
+
+
+```
+
+
+1. What have you learned about your data? Have any potentially interesting patterns emerged? Point to specific visualizations that you created as you describe your findings.
+
+After creating my lollipop graph I noticed that Wreck Pond hand a really really really really high concentration of K. After looking at the other water measurements from this water body I saw that all of its measurements were insanely high. I'm going to have to dig into the meta data or the research this data was used in to see if this was a mistake of some kind. These outlines are also affecting a lot of the scatter plots I was trying to make. On the bar graph I made, for NO3, I found that luckily Wreck Pond didn't have a crazy outlier, but for some reason South Lake has 2 max NO3 values and neither of which are at the end of the bar. I'm not sure how, but I will need to do more investigation.
+
+2. In FPM #1, you outlined some questions that you wanted to answer using these data. Have you made any strides towards answering those questions? If yes, how so? If no, what next steps do you need to take (e.g. I need to create X plot type, I still need to track down Y data, I need to restructure existing data so that you can visualize it in Z ways, etc.)? Have any new questions emerged?
+
+I'm still gathering the EPA threshold for the contaminants of interest in this data set. I have a couple of them, but not all of them yet. Also, I wanted to see which lakes have the highest concentration of Ammonia (NH₃) because its hazardous to humans, but I don't actually have it in my data I mistook it for NH4. NH4 is less hazardous, so I will instead be looking into Nitrate.
+
+3. What challenges do you foresee encountering with your data? These can be data wrangling and / or visualization challenges.
+
+I really wanted to make a map with points representing the lakes and showing which lakes have high concentrations of unsafe contaminants. With this, I could even see if these contaminated lakes are close together and have a spatial relationship. Unfortunately, I have not been able to find this data, and it would be way too much to manually do it for all of my hundreds of lakes.
+
+
