@@ -11,6 +11,8 @@ The purpose of this project was to investigate which lakes in the northeast have
 ├── lake_analysis.qmd 
 ├── exploration.qmd
 ├── README.md 
+├── scartch
+├── images
 └── .gitignore
 ```
 
